@@ -1,0 +1,31 @@
+$ sudo install ufw -y
+   -- installs the Uncomplicated Firewall (UFW)
+   -- install it if not installed already
+   
+$ sudo ufw enable
+   -- starts or enables the UFW
+
+$ sudo ufw status numbered
+   -- shows currently active rules
+
+$ sudo ufw deny 23
+   -- blocks incoming connections to port 23 (Telnet)
+   
+$ sudo apt install telnet -y
+   -- installs Telnet
+   -- install it if not installed already
+   
+$ telnet 127.0.0.1 23
+   -- request connection to the port 23
+   -- connection would be refused due to UFW DENY 
+   
+$ sudo ufw allow 22
+   -- allows incoming connections to port 22 (SSH - Secure Shell)
+   
+$ sudo ufw status numbered
+   -- list the connections with numbers in order
+   -- includes both IPv4 and IPv6
+
+$ sudo ufw delete N
+   -- deletes the connection displayed
+   -- replace the 'N' with the number
